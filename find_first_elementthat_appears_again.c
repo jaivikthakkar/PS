@@ -19,10 +19,10 @@ int main()
         printf("eneter your array element :");
         scanf("%d", &array[i]);
     }
-    for (int  i = 0; i < n; i++)
+    int i=0;
+    for (i = 0; i < n; i++)
     {
-        int j=0;
-        for ( j = n-1; j > i; j--)
+        for (int j = 0; j < i; j++)
         {
             if (array[i]==array[j])
             {
@@ -36,21 +36,17 @@ int main()
         }
         if (falge==1)
         {
-           continue;
-        }
-        else
-        {
             ans=i;
             break;
         }
     }
-    if (falge==1)
+    if (falge==0)
     {
         printf("-1");
     }
     else
     {
-        printf("%d",ans);
+        printf("%d",i);
     }
     return 0;
 }
