@@ -13,40 +13,36 @@ int main()
     int n;
     printf("enter your number :");
     scanf("%d", &n);
-    int array[n], falge = 0,ans;
+    int array[n], falge = 0, ans;
     for (int i = 0; i < n; i++)
     {
         printf("eneter your array element :");
         scanf("%d", &array[i]);
     }
-    int i=0;
+    int i = 0;
     for (i = 0; i < n; i++)
     {
         for (int j = 0; j < i; j++)
         {
-            if (array[i]==array[j])
+            if (array[i] == array[j])
             {
-                falge=1;
+                falge = 1;
                 break;
             }
-            else
-            {
-                falge=0;
-            }
         }
-        if (falge==1)
+        if (falge == 1)
         {
-            ans=i;
+            ans = i;
             break;
         }
     }
-    if (falge==0)
+    if (falge == 0)
     {
         printf("-1");
     }
     else
     {
-        printf("%d",i);
+        printf("%d", i);
     }
     return 0;
 }
