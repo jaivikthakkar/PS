@@ -12,32 +12,37 @@ int main()
 {
     int n;
     printf("enter your number :");
-    scanf("%d",&n);
-    int array[n],falge=0,i=0,j=0;
-    for (i = 0; i <n; i++)
+    scanf("%d", &n);
+    int array[n], falge = 0,ans;
+    for (int i = 0; i < n; i++)
     {
         printf("eneter your array element :");
-        scanf("%d",&array[i]);
+        scanf("%d", &array[i]);
     }
-    for ( i = 0; i < n-1; i++)
+    for (int  i = 0; i < n; i++)
     {
-        for (int j = n-1; j>=0; j--)
+        int j=0;
+        for ( j = n-1; j > i; j--)
         {
             if (array[i]==array[j])
             {
-               falge=0;
-               break;
+                falge=1;
+                break;
             }
             else
             {
-                falge=1;
+                falge=0;
             }
         }
-        if (falge==0)
+        if (falge==1)
         {
+           continue;
+        }
+        else
+        {
+            ans=i;
             break;
         }
-
     }
     if (falge==1)
     {
@@ -45,10 +50,7 @@ int main()
     }
     else
     {
-        printf("%d",j);
+        printf("%d",ans);
     }
-
-
-
     return 0;
 }
